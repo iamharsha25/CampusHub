@@ -1,0 +1,6 @@
+we are the starting the project on 16th july of 2026 ............
+we have a clear plan to do a daily work of 3 days and complete this in 15 days,As the goal....
+Day - 1 : Harsha will be completing 
+Architecture,wireframes,navigation flow,pages
+Repo creation,gitignore,development set-up
+Creation of sample feature branch and change
