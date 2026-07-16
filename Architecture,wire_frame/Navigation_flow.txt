@@ -1,0 +1,32 @@
+                        START
+                          │
+                          ▼
+                     Landing Page
+                          │
+                 ┌────────┴──────────┐
+                 ▼                   ▼
+               Login           	 Register
+                 │                    │
+                 │             ┌──────┴──────────┐
+                 │             ▼             	   ▼
+                 │          Student            Teacher
+                 │          Register           Register
+                 │             │                 │
+                 └──────────────────┬────────────┘
+                                   ▼
+                                  Login
+                                   │
+                         ┌───────────────────────────────────────────────────────────────┐                                                   
+                         ▼                  				                                     ▼
+                 Student Dashboard                                                 Teacher Dashboard
+                         │                  				 
+              ┌────────┼────────┼──────┼───────|───────|──────────┐	          ┌─────────────┼────────────┼──────────────┼──────────────────┼───────────────────────┐
+              ▼        ▼        ▼      ▼       ▼       ▼	        ▼	          ▼             ▼            ▼              ▼                  ▼	                     ▼
+           Profile    Attendance  Projects   skills    Task   Placements     Application Std&Details Attendance  Perfo&Analysis   Parent&studentFollowUp   CurrentWorkingPage
+    		       └───────────────────────│──────────────────────────┘	                └───────────────────────────────│─────────────────────────────────────────────────────┘	
+					                             ▼                                                                            ▼
+                        		     Help/Logout                                                                   Help/Logout 
+
+	
+	
+													
