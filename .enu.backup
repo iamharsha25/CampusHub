@@ -1,0 +1,7 @@
+Customer wants some detail 
+The website sends a request (fetch) to the API.
+The server first checks the token.
+If the token is valid, the server asks the database.
+The database checks if the detail actually exists.
+The server sends this detail back to the customer (website) as a response.
+The customer sees the detail on screen.
