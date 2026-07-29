@@ -1,0 +1,304 @@
+====================================================
+             CAMPUSHUB DATABASE DESIGN (V1)
+====================================================
+
+
+Teacher
+---------
+Teacher_ID (PK)
+Name
+Department
+Email
+Phone
+
+
+Student
+---------
+Student_ID (PK)
+Teacher_ID (FK)
+
+Name
+Department
+Email
+Contact
+
+Parent_Name
+Parent_Phone
+
+
+Project
+---------
+Project_ID (PK)
+
+Student_ID (FK)
+Teacher_ID (FK)
+
+Project_Title
+Github_URL
+Description
+
+Project_Status
+Project_Review
+Submitted_Date
+
+
+Skill
+---------
+Skill_ID (PK)
+
+Student_ID (FK)
+Teacher_ID (FK)
+
+Skill_Name
+Level
+
+Teacher_Feedback
+Verified_Status
+Verified_Date
+
+
+Task
+---------
+Task_ID (PK)
+
+Teacher_ID (FK)
+Student_ID (FK)
+
+Task_Title
+Description
+
+Assigned_Date
+Deadline
+
+Task_Status
+
+
+Attendance
+---------
+Attendance_ID (PK)
+
+Student_ID (FK)
+Teacher_ID (FK)
+
+Date
+Status
+
+
+Placement_Application
+-------------------------
+Application_ID (PK)
+
+Student_ID (FK)
+
+Company
+Job_Role
+
+Applied_Date
+Status
+
+
+
+====================================================
+               RELATIONSHIPS
+====================================================
+
+Teacher (1)
+      │
+      ▼
+Student (Many)
+
+Teacher (1)
+      │
+      ▼
+Task (Many)
+
+Teacher (1)
+      │
+      ▼
+Project (Many)
+
+Teacher (1)
+      │
+      ▼
+Skill (Many)
+
+Teacher (1)
+      │
+      ▼
+Attendance (Many)
+
+Student (1)
+      │
+      ▼
+Project (Many)
+
+Student (1)
+      │
+      ▼
+Skill (Many)
+
+Student (1)
+      │
+      ▼
+Task (Many)
+
+Student (1)
+      │
+      ▼
+Attendance (Many)
+
+Student (1)
+      │
+      ▼
+Placement_Application (Many)
+
+
+
+====================================================
+               PRIMARY KEYS
+====================================================
+
+Teacher
+--------
+Teacher_ID
+
+Student
+--------
+Student_ID
+
+Project
+--------
+Project_ID
+
+Skill
+------
+Skill_ID
+
+Task
+-----
+Task_ID
+
+Attendance
+----------
+Attendance_ID
+
+Placement_Application
+---------------------
+Application_ID
+
+
+
+====================================================
+               FOREIGN KEYS
+====================================================
+
+Student
+--------
+Teacher_ID
+→ Teacher.Teacher_ID
+
+
+Project
+--------
+Student_ID
+→ Student.Student_ID
+
+Teacher_ID
+→ Teacher.Teacher_ID
+
+
+Skill
+------
+Student_ID
+→ Student.Student_ID
+
+Teacher_ID
+→ Teacher.Teacher_ID
+
+
+Task
+-----
+Student_ID
+→ Student.Student_ID
+
+Teacher_ID
+→ Teacher.Teacher_ID
+
+
+Attendance
+----------
+Student_ID
+→ Student.Student_ID
+
+Teacher_ID
+→ Teacher.Teacher_ID
+
+
+Placement_Application
+---------------------
+Student_ID
+→ Student.Student_ID
+
+
+
+====================================================
+               DATABASE RULES
+====================================================
+
+1. Every table has ONE Primary Key.
+
+2. Foreign Keys always reference the Primary Key of another table.
+
+3. One Teacher can guide many Students.
+
+4. One Teacher can assign many Tasks.
+
+5. One Teacher can review many Projects.
+
+6. One Teacher can verify many Skills.
+
+7. One Teacher can mark Attendance for many Students.
+
+8. One Student belongs to one Teacher.
+
+9. One Student can have many Projects.
+
+10. One Student can have many Skills.
+
+11. One Student can have many Tasks.
+
+12. One Student can have many Attendance records.
+
+13. One Student can submit many Placement Applications.
+
+14. Store IDs instead of names for relationships.
+
+15. Do not duplicate data across tables.
+
+16. Every table represents one real-world entity.
+
+17. Relationships are created using Foreign Keys.
+
+
+
+====================================================
+               ER RELATIONSHIPS
+====================================================
+
+Teacher (1)
+        │
+        ├──────────────┐
+        │              │
+        ▼              ▼
+     Student         Task
+        │              ▲
+        │              │
+        ├──────────────┘
+        │
+        ├────────────► Project
+        │
+        ├────────────► Skill
+        │
+        ├────────────► Attendance
+        │
+        └────────────► Placement_Application
